@@ -15,12 +15,14 @@ exp_03_dilation_list = [6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25]
 exp_04_dilation_list = exp_03_dilation_list;
 exp_05_qp_list = exp_01_qp_list;
 
-exp_01_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet1_custom_ffmpeg/test_';
-exp_02_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet2_standard_ffmpeg/test_';
-exp_03_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet3_lossy_comp_by_dilation/test_';
-exp_04_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet4_lossy_comp_by_dilation_noise_back/test_';
-ref_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/reference_msds/test_';
-exp_05_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet4_5_custom_ffmpeg_noise_back/test_';
+%exp_01_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet1_custom_ffmpeg/test_';
+%exp_02_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet2_standard_ffmpeg/test_';
+%exp_03_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet3_lossy_comp_by_dilation/test_';
+%exp_04_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet4_lossy_comp_by_dilation_noise_back/test_';
+%ref_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/reference_msds/test_';
+%exp_05_dir = '/playpen2/cshao/paper2_data/lossy_comp_video_size_exp_chart/sheet4_5_custom_ffmpeg_noise_back/test_';
+exp_01_dir = 
+
 
 % read the bead msd datas and generate the result
 [exp_01_msd_means, exp_01_msd_stdevs] = compute_mean_stdev_over_tests_for_different_params(exp_01_qp_list, 1:10, exp_01_dir, 'qp');
@@ -43,9 +45,15 @@ exp_ref_msd_mean = mean(exp_msd, 2);
 tau_index = 2;
 
 % get average file size
-exp_01_avg_file_sizes = compute_file_sizes_for_the_exp(exp_01_dir, exp_01_qp_list, 1:10, 'qp');
-exp_02_avg_file_sizes = compute_file_sizes_for_the_exp(exp_02_dir, exp_02_qp_list, 1:10, 'qp');
-exp_03_avg_file_sizes = compute_file_sizes_for_the_exp(exp_03_dir, exp_03_dilation_list, 1:10, 'dilate');
+%exp_01_avg_file_sizes = compute_file_sizes_for_the_exp(exp_01_dir, exp_01_qp_list, 1:10, 'qp');
+%exp_02_avg_file_sizes = compute_file_sizes_for_the_exp(exp_02_dir, exp_02_qp_list, 1:10, 'qp');
+%exp_03_avg_file_sizes = compute_file_sizes_for_the_exp(exp_03_dir, exp_03_dilation_list, 1:10, 'dilate');
+
+exp_01_avg_file_sizes = [2.9377, 2.7286, 2.5144, 2.3255, 2.1645    2.0695    1.9982    1.9397    1.8577    1.4946    0.9047    0.2608    0.0077];
+exp_02_avg_file_sizes = [3.2210, 1.8080, 0.8109, 0.1010, 0.0793    0.0626    0.0455    0.0317    0.0218    0.0114];
+exp_03_avg_file_sizes = [1.1429, 1.1429, 1.2968, 1.2968, 1.4847    1.5462    1.7418    1.7418    1.9310    1.9310    2.1467    2.1467    2.3714    2.3714    2.6163    2.6163    2.8493    2.8493    3.0714    3.0714];
+
+
 
 test_video_size = 569230200;
 
